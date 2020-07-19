@@ -95,10 +95,13 @@ def getUserPosts(user, limit=30, order='new'):
 		return None
 	return k
 
+devs = ['irethekid','codemonkey51']
 def getUserRoles(user):
 	roles = []
 	for i in user.roles:
 		roles.append(i['name'])
+	if(user.name.lower() in devs):
+		roles.insert(0,'RC dev')
 
 	return roles
 
